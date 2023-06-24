@@ -1,0 +1,180 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<!-- Task A: Pattern matching -->
+
+<!-- GREETING -->
+
+<category> 
+    <pattern> HELLO </pattern>
+    <template>Hello! How are you?</template> 
+ </category>
+
+<category> 
+    <pattern> HELLO * </pattern>
+    <template><srai>HELLO</srai></template> 
+</category>
+
+<category> 
+    <pattern> HI </pattern>
+    <template><srai>HELLO</srai></template> 
+</category>
+
+<category> 
+    <pattern> HI * </pattern>
+    <template><srai>HELLO</srai></template> 
+</category>
+
+<category> 
+    <pattern> MY NAME IS * </pattern>
+    <template> Hello<set name="userName"> <star/> </set> </template> 
+</category>
+
+<category> 
+    <pattern> I AM * </pattern>
+    <template> Hello<set name="userName"> <star/> </set> </template> 
+</category>
+  
+<category> 
+    <pattern> I AM WELL </pattern>
+    <template>Glad to hear. Do you have a question?</template>
+</category>
+
+<category> 
+    <pattern> HOW ARE YOU </pattern>
+    <template>I'm functioning within normal parameters, thanks for asking.</template>
+</category>
+
+<category>
+    <pattern> I AM FINE </pattern>
+    <template>That's good to know. What would you like to discuss?</template>
+</category>
+
+<!-- FAREWELLS -->
+
+<category>
+    <pattern> BYE </pattern>
+    <template>#0$Bye! Nice talking to you<get name="userName"/>- Goodbye!.</template>
+</category>
+
+<category>
+    <pattern> GOODBYE </pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<category>
+    <pattern> GOOD NIGHT </pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<category>
+    <pattern> SEE YOU </pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<category>
+    <pattern> EXIT </pattern>
+    <template><srai>BYE</srai></template>
+</category>
+
+<!-- THANKS -->
+
+<category> <pattern> THANKS </pattern>
+  <template>You are welcome.</template></category>
+
+<category> <pattern> THANK YOU </pattern>
+  <template><srai>THANKS</srai></template></category>
+
+<category> <pattern> CHEERS </pattern>
+  <template>Sure mate.</template></category>
+
+<category> <pattern> CHEERS * </pattern>
+  <template>Sure mate.</template></category>
+  
+<!-- Task B: Logical Component -->
+<!-- 20: I KNOW THAT * IS A * -->
+<category>
+    <pattern>I KNOW THAT THE * IS A *</pattern>
+    <template>#20$<star index="1"/> is <star index="2"/></template>
+</category> 
+
+<category>
+    <pattern>I KNOW THAT THE * IS AN *</pattern>
+    <template>#20$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<category>
+    <pattern>I KNOW THE * IS A *</pattern>
+    <template>#20$<star index="1"/> is <star index="2"/></template>
+</category> 
+
+<category>
+    <pattern>I KNOW THE * IS AN *</pattern>
+    <template>#20$<star index="1"/> is <star index="2"/></template>
+</category> 
+ 
+<category>
+    <pattern>THE * IS A *</pattern>
+    <template>#20$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<category>
+    <pattern>THE * IS AN *</pattern>
+    <template>#20$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<!-- 21: IS THE * AN * -->
+<category>
+    <pattern>IS THE * AN *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>
+  
+<category>
+    <pattern>IS A * AN *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<category>
+    <pattern>IS AN * A *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<category>
+    <pattern>IS THE * A *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>
+  
+<category>
+    <pattern>IS A * A *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<category>
+    <pattern>IS AN * A *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>
+
+<category>
+    <pattern>CHECK THAT THE * IS AN *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>  
+
+<category>
+    <pattern>CHECK THAT THE * IS A *</pattern>
+    <template>#21$<star index="1"/> is <star index="2"/></template>
+</category>  
+
+<!-- Task C: Load Image -->
+
+<category>
+    <pattern>WHAT IS THIS IMAGE OF</pattern>
+    <template>#30$<star index="1"/> is <star index="2"/></template>
+</category>  
+
+<!-- Default reaction -->
+<!-- Task A: Q/A -->
+<category>
+    <pattern> * </pattern>
+    <template>#1$<star index="1"/></template>
+</category>
+
+</aiml>
