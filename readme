@@ -1,1 +1,3 @@
 # Python AI Chatbot
+
+An AI chatbot written in python that incorporates various functions including phrase similiarity matchig using cosine similarity, logical processing of a knowledgebase and using a convolutional neural network to classify images.
